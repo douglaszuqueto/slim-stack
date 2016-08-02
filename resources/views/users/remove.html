@@ -1,0 +1,10 @@
+{% extends "template.html" %}
+{% block title %}User{% endblock %}
+{% block content %}
+<h3 class="center">User - Remove</h3>
+<div class="divider"></div>
+<h3>Usuário: {{ user.name }}</h3>
+<form method="POST" action="destroy">
+    <input type="submit" value="Deletar">
+</form>
+{% endblock %}

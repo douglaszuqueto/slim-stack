@@ -1,0 +1,32 @@
+{% extends "template.html" %}
+{% block title %}User{% endblock %}
+{% block content %}
+<h3 class="center">User - Index</h3>
+
+<a href="/users/create" class="right">Novo Usuario</a>
+
+<table class="bordered">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Opcoes</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for user in users %}
+    <tr>
+        <td>{{ user.id }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>
+            <a href="/users/{{user.id}}/edit">Edit</a>
+            <a href="/users/{{user.id}}/remove">Remove</a>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
