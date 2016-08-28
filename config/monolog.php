@@ -1,6 +1,13 @@
 <?php
 
+use Slim\Flash\Messages;
+
 $container = $app->getContainer();
+
+$container['flash'] = function () {
+    return new Messages();
+};
+
 
 $container['logger'] = function ($c) {
     $settings = $c->get('settings')['logger'];
